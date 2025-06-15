@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Search, Bell, BarChart2, Users, Briefcase, UserCheck, Calendar, DollarSign, AlertCircle, Smile, Frown, Meh, Zap, Battery, Filter, TrendingUp, Activity } from 'lucide-react';
 import Sidebarmenu from '../components/Sidebarmenu';
+import.meta.env.VITE_API_URL
 
 // Configuration de l'API
 const API_BASE_URL = '${import.meta.env.VITE_API_URL}/api';

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Download, Filter, Plus, X, Edit, Trash2, ChevronRight } from 'lucide-react';
 import Sidebarmenu from '../components/Sidebarmenu';
+import.meta.env.VITE_API_URL
 
 export default function Client() {
   const [clients, setClients] = useState([]);

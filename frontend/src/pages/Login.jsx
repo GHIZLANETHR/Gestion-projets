@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Navbar from '../components/Navbar';
+import.meta.env.VITE_API_URL
+
 
 const Login = () => {
   const [email, setEmail] = useState('');
