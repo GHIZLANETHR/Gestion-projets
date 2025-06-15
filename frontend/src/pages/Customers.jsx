@@ -34,7 +34,7 @@ export default function Client() {
 
   const fetchClients = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/clients');
+      const res = await axios.get('${import.meta.env.VITE_API_URL}/api/clients');
       setClients(res.data);
     } catch (err) {
       console.error("Erreur de chargement clients :", err);
@@ -112,7 +112,7 @@ export default function Client() {
     e.preventDefault();
     try {
       const date_inscription = new Date().toISOString().slice(0, 10);
-      const res = await axios.post('http://localhost:5000/api/clients', {
+      const res = await axios.post('${import.meta.env.VITE_API_URL}/api/clients', {
         ...newClient,
         date_inscription
       });
@@ -130,7 +130,7 @@ export default function Client() {
   const handleSaveEditedClient = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`http://localhost:5000/api/clients/${editingClient.id}`, editingClient);
+      await axios.put(`${import.meta.env.VITE_API_URL}/api/clients/${editingClient.id}`, editingClient);
       setClients(clients.map(c => (c.id === editingClient.id ? editingClient : c)));
       setEditingClient(null);
     } catch (err) {
@@ -141,7 +141,7 @@ export default function Client() {
   const handleDeleteClient = async (clientId) => {
     if (window.confirm(`Voulez-vous vraiment supprimer ce client ?`)) {
       try {
-        await axios.delete(`http://localhost:5000/api/clients/${clientId}`);
+        await axios.delete(`${import.meta.env.VITE_API_URL}/api/clients/${clientId}`);
         setClients(clients.filter(c => c.id !== clientId));
       } catch (err) {
         console.error("Erreur suppression client :", err);

@@ -3,7 +3,7 @@ import { Search, Bell, BarChart2, Users, Briefcase, UserCheck, Calendar, DollarS
 import Sidebarmenu from '../components/Sidebarmenu';
 
 // Configuration de l'API
-const API_BASE_URL = 'http://localhost:5000/api';
+const API_BASE_URL = '${import.meta.env.VITE_API_URL}/api';
 
 const AdminDash = () => {
   // États pour stocker les données du tableau de bord
